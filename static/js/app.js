@@ -58,9 +58,32 @@ function barChart(otu){
 
   // show the chart
   Plotly.newPlot("bar", [trace], layout);
+}
 
+// create bubble chart
+function bubbleChart(otu){
+    // create the trace
+    let trace = {
+      x: otu.otu_ids,
+      y: otu.sample_values,
+      text: otu.otu_labels,
+      mode: "markers",
+      marker: {
+        size: otu.sample_values,
+        color: otu.otu_ids,
+        colorscale: "agsunset",
+      },
+    };
 
+    // create the layout
+    let layout = {
+        title: {
+          text: "<b>All OTUs</b>",
+          font: {size: 22,},
+        },
+        xaxis: {title: `<b>OTU ID</b>`},
+        yaxis: {title: `<b>Number of Each OTU</b>`},
+      };
 
-
-};
+      Plotly.newPlot("bubble", [trace], layout);
 
