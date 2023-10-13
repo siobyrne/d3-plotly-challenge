@@ -85,5 +85,20 @@ function bubbleChart(otu){
         yaxis: {title: `<b>Number of Each OTU</b>`},
       };
 
+      // plot the chart
       Plotly.newPlot("bubble", [trace], layout);
+    }
+
+    // show the metadata
+    function metaData(info){
+        // clear existing
+        d3.select("#sample-metadata").html("");
+
+        // display the metadata in the table
+        Object.keys(info).forEach((key) => {
+            value = info[key];
+            d3.select("#sample-metadata").append("p").html(`<b>${key}:</b> ${value}`);
+       
+        });
+ }
 
