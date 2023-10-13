@@ -51,7 +51,7 @@ function barChart(otu){
   let layout = {
     title: {
       text: "<b>Top Ten OTUs</b>",
-      font: {size: 24,},
+      font: {size: 22,},
     },
     xaxis: {title: "<b>Number of Samples</b>"},
   };
