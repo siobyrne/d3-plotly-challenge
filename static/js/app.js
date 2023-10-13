@@ -29,4 +29,38 @@ bubbleChart(otu);
 metaData(meta);
 }
 
+// create bar chart for top ten OTUs
+function barChart(otu){
+
+    let topTen = otu.sample_values.slice(0,10).reverse();
+    let labels = otu.otu_labels.slice(0,10).reverse();
+
+      // create the trace
+  let trace = {
+    x: topTen,
+    y: labels.map((labels, index) => `OTU ${otu.otu_ids[index]}`).slice().reverse(),
+    text: labels,
+    type: "bar",
+    orientation: "h",
+    marker:{
+      color: 'rgba(255,153,51,0.6)'
+    }
+  };
+
+  // create the layout
+  let layout = {
+    title: {
+      text: "<b>Top Ten OTUs</b>",
+      font: {size: 24,},
+    },
+    xaxis: {title: "<b>Number of Samples</b>"},
+  };
+
+  // show the chart
+  Plotly.newPlot("bar", [trace], layout);
+
+
+
+
+};
 
