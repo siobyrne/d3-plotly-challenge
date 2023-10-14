@@ -11,5 +11,5 @@ This project pulls in JSON data and uses D3 and Plotly to create interactive cha
 ![Bar Chart of Sample 940](static/images/sample940-bar.png)
 _Bar chart of Sample 940_
 
-![My Image](static/images/sample940-bubble.png)
+![Bubble Chart of Sample 940](static/images/sample940-bubble.png)
 _Bubble chart of Sample 940_
